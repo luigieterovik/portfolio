@@ -1,12 +1,16 @@
-import React from 'react'
+import React from "react";
 
-import * as S from './styles'
+import * as S from "./styles";
+
+const i = (name) => {
+  return require("../../assets/" + name);
+};
 
 export default function Contact({ ...props }) {
   return (
     <S.ContactDiv>
-        <S.ContactImg src={props.img}/>
-        <S.ContactText>{props.label}</S.ContactText>
+      <S.ContactImg src={i(props.img)} isResume={props.isResume} />
+      <S.ContactText>{props.name}</S.ContactText>
     </S.ContactDiv>
-  )
+  );
 }

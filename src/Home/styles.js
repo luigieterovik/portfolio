@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import Background from "../assets/background.png";
 
-const fontColor = "#E9CDFF";
+import fontColor from "../utils/fontColor";
 
 export const Wrapper = styled.div`
   width: 100vw;
