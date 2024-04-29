@@ -45,6 +45,7 @@ export const Description = styled.h3`
 
 export const ContactWrapper = styled.div`
   display: flex;
+  gap: 20px;
 `;
 
 

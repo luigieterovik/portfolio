@@ -17,7 +17,12 @@ export default function Home() {
 
         <S.ContactWrapper>
           {contacts.map((contact, index) => (
-            <Contact img={contact.image} name={contact.name} key={index} isResume={index === 2} />
+            <Contact
+              img={contact.image}
+              name={contact.name}
+              key={index}
+              isResume={index === 2}
+            />
           ))}
         </S.ContactWrapper>
       </S.LeftContainer>
