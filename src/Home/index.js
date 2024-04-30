@@ -3,7 +3,9 @@ import React from "react";
 import * as S from "./styles";
 
 import Contact from "../Components/Contact";
-import contacts from "../utils/contacts";
+
+import contacts from "../utils/constants/contacts";
+import sections from "../utils/constants/sections";
 
 export default function Home() {
   return (
@@ -15,13 +17,23 @@ export default function Home() {
           Construo aplicações web, ajudando empresas a venderem seus produtos.
         </S.Description>
 
+        <S.Navbar>
+          <ul>
+            {sections.map((section, index) => (
+              <S.NavSection key={index}>
+                {section.toLocaleUpperCase()}
+              </S.NavSection>
+            ))}
+          </ul>
+        </S.Navbar>
+
         <S.ContactWrapper>
           {contacts.map((contact, index) => (
             <Contact
-              img={contact.image}
-              name={contact.name}
               key={index}
-              isResume={index === 2}
+              image={contact.image}
+              name={contact.name}
+              link={contact.link}
             />
           ))}
         </S.ContactWrapper>

@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-import fontColor from "../../utils/fontColor";
+import fontColor from "../../utils/constants/fontColor";
 
 export const ContactDiv = styled.div`
   display: flex;
