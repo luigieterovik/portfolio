@@ -37,7 +37,7 @@ export const Title = styled.h2`
 
 export const Description = styled.h3`
   color: ${fontColor};
-  font-weight: 500;
+  font-weight: 400;
   font-size: 15px;
   opacity: 0.8;
   width: 330px;
