@@ -6,6 +6,7 @@ import Contact from "../Components/Contact";
 
 import contacts from "../utils/constants/contacts";
 import sections from "../utils/constants/sections";
+import experiences from '../utils/constants/experiences'
 
 export default function Home() {
   return (
@@ -55,7 +56,14 @@ export default function Home() {
 
         <S.Section>
           <S.SectionTitle>{sections[1].toLocaleUpperCase()}</S.SectionTitle>
+          <S.ExperienceWrapper>
+            <S.ExperienceDate></S.ExperienceDate>
+            <S.ExperienceRightContainer>
+              <S.ExperienceTitle></S.ExperienceTitle>
+              <S.ExperienceDescription></S.ExperienceDescription>
 
+            </S.ExperienceRightContainer>
+          </S.ExperienceWrapper>
         </S.Section>
       </S.RightContainer>
     </S.Wrapper>

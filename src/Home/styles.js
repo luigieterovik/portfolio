@@ -43,9 +43,10 @@ export const Title = styled.h2`
 export const Description = styled.h3`
   color: ${fontColor};
   font-weight: 400;
-  font-size: 15px;
+  font-size: 16px;
   opacity: 0.8;
   width: 330px;
+  text-wrap: balance;
 `;
 
 export const ContactWrapper = styled.div`
@@ -76,6 +77,7 @@ export const AboutText = styled.p`
   color: ${fontColor};
   font-size: 16px;
   opacity: 0.8;
+  text-wrap: balance;
 `;
 
 // Navbar
