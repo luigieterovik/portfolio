@@ -3,7 +3,7 @@ import styled from "styled-components";
 import fontColor from "../../utils/constants/fontColor";
 
 export const ExperienceWrapper = styled.div`
-  width: 90%;
+  width: 100%;
   border-radius: 10px;
   display: flex;
   padding: 15px 20px;
@@ -44,7 +44,7 @@ export const ExperienceDescription = styled.p`
   text-wrap: balance;
   opacity: 0.6;
   margin: 10px 0 15px;
-  font-size: 15px;
+  font-size: 14px;
   color: ${fontColor};
 `;
 
