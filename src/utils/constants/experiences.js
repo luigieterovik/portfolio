@@ -1,7 +1,7 @@
 const experiences = [
   {
     date: "2023 — PRESENTE",
-    position: "Desenvolvedor FullStack",
+    role: "Desenvolvedor FullStack",
     enterprise: "Freelancer",
     description:
       "Como Freelancer, realizo principalmente projetos web, construindo o Front e Back-end de sites que trabalho, adicionando banco de dados, quando necessário.",
@@ -13,7 +13,9 @@ const experiences = [
       "MongoDB",
       "Docker",
       "Git",
-      "Figma"
+      "Figma",
+      "HTML",
+      "CSS",
     ],
   },
 ];

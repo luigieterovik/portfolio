@@ -4,7 +4,7 @@ import Background from "../assets/background.png";
 
 import fontColor from "../utils/constants/fontColor";
 
-export const Wrapper = styled.div`
+export const BackgroundWrapper = styled.div`
   width: 100vw;
   height: 100vh;
   background-image: url("${Background}");
@@ -13,12 +13,18 @@ export const Wrapper = styled.div`
   background-position: center;
   padding: 100px 200px;
   display: flex;
+  justify-content: center;
   overflow-y: auto;
 `;
 
+export const Wrapper = styled.main`
+  width: 1100px;
+  height: 1000px;
+`
+
 export const LeftContainer = styled.div`
-  height: 100%;
-  width: 50%;
+  height: 75vh;
+  width: fit-content;
 
   display: flex;
   flex-direction: column;
@@ -52,16 +58,17 @@ export const Description = styled.h3`
 export const ContactWrapper = styled.div`
   gap: 30px;
   display: flex;
-  margin-top: 100px;
+  margin-top: auto;
 `;
 
 export const RightContainer = styled.div`
   gap: 60px;
-  width: 60%;
+  width: 55%;
   display: flex;
   margin-left: 100px;
   flex-direction: column;
   margin-left: auto;
+  transform: translateY(10px);
 `;
 
 export const Section = styled.section``;
@@ -69,14 +76,15 @@ export const Section = styled.section``;
 export const SectionTitle = styled.h3`
   color: ${fontColor};
   font-weight: 500;
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 20px;
+  opacity: 0.9;
 `;
 
 export const AboutText = styled.p`
   color: ${fontColor};
   font-size: 16px;
-  opacity: 0.8;
+  opacity: 0.6;
   text-wrap: balance;
 `;
 
@@ -107,14 +115,54 @@ export const SlideBar = styled.div`
   background: ${fontColor};
 `;
 
-export const ExperienceWrapper = styled.div``;
+export const ExperienceWrapper = styled.div`
+  width: 90%;
+  border-radius: 10px;
+  display: flex;
+  padding: 15px 20px;
+  transform: translateX(-20px);
 
-export const ExperienceDate = styled.label``;
+  &:hover {
+    background-color: rgba(233, 205, 255, 0.1);
 
-export const ExperienceRightContainer = styled.div``;
+    h5 {
+      color: #db00ff;
+    }
+  }
+`;
 
-export const ExperienceTitle = styled.h5``;
+export const ExperienceDate = styled.label`
+  color: ${fontColor};
+  opacity: 0.6;
+  font-size: 13px;
+  transform: translateY(3px);
+  margin-right: 20px;
+  white-space: nowrap;
+`;
 
-export const ExperienceDescription = styled.p``;
+export const ExperienceRightContainer = styled.div`
+  width: 73%;
+  margin-left: auto;
+`;
 
+export const ExperienceTitle = styled.h5`
+  opacity: 0.9;
+  color: ${fontColor};
+  font-size: 17px;
+  font-weight: 500;
+`;
 
+export const ExperienceDescription = styled.p`
+  text-wrap: balance;
+  opacity: 0.6;
+  margin: 10px 0 15px;
+  font-size: 15px;
+  color: ${fontColor};
+`;
+
+export const TagsWrapper = styled.p`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 8px;
+`;
