@@ -3,7 +3,7 @@ import React from "react";
 import * as S from "./styles";
 
 import Contact from "../Components/Contact";
-import Tag from "../Components/Tag";
+import Experience from "../Components/Experience";
 
 import contacts from "../utils/constants/contacts";
 import sections from "../utils/constants/sections";
@@ -58,22 +58,11 @@ export default function Home() {
 
           <S.Section>
             <S.SectionTitle>{sections[1].toLocaleUpperCase()}</S.SectionTitle>
-            <S.ExperienceWrapper>
-              <S.ExperienceDate>{experiences[0].date}</S.ExperienceDate>
-              <S.ExperienceRightContainer>
-                <S.ExperienceTitle>
-                  {experiences[0].role} · {experiences[0].enterprise}
-                </S.ExperienceTitle>
-                <S.ExperienceDescription>
-                  {experiences[0].description}
-                </S.ExperienceDescription>
-                <S.TagsWrapper>
-                  {experiences[0].tags.map((tag, index) => (
-                    <Tag text={tag} key={index} />
-                  ))}
-                </S.TagsWrapper>
-              </S.ExperienceRightContainer>
-            </S.ExperienceWrapper>
+            <S.ExperiencesWrapper>
+              {experiences.map((experience, index) => (
+                <Experience experience={experience} key={index} />
+              ))}
+            </S.ExperiencesWrapper>
           </S.Section>
         </S.RightContainer>
       </S.Wrapper>
