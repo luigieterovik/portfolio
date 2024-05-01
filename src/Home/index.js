@@ -3,6 +3,7 @@ import React from "react";
 import * as S from "./styles";
 
 import Contact from "../Components/Contact";
+import Tag from "../Components/Tag";
 
 import contacts from "../utils/constants/contacts";
 import sections from "../utils/constants/sections";
@@ -61,6 +62,7 @@ export default function Home() {
             <S.ExperienceRightContainer>
               <S.ExperienceTitle></S.ExperienceTitle>
               <S.ExperienceDescription></S.ExperienceDescription>
+              
 
             </S.ExperienceRightContainer>
           </S.ExperienceWrapper>

@@ -106,3 +106,15 @@ export const SlideBar = styled.div`
   width: 3px;
   background: ${fontColor};
 `;
+
+export const ExperienceWrapper = styled.div``;
+
+export const ExperienceDate = styled.label``;
+
+export const ExperienceRightContainer = styled.div``;
+
+export const ExperienceTitle = styled.h5``;
+
+export const ExperienceDescription = styled.p``;
+
+
