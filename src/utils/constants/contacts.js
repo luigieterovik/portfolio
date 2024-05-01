@@ -8,13 +8,13 @@ const contacts = [
   {
     image: "githubIcon.png",
     name: "GitHub",
-    link: "https://github.com/luigiolivi",
+    link: "https://github.com/luigieterovik",
   },
 
   {
     image: "resumeIcon.png",
     name: "Currículo",
-    link: "https://drive.google.com/file/d/1x_p5qa-1Q5nUp82YA-HpXeQqNtx7BL_M/view?usp=sharing",
+    link: "https://drive.google.com/file/d/1ribHaxVoVGWgKjKZKJNQDw1vPJe5j7bW/view?usp=sharing",
   },
 ];
 
