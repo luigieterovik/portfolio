@@ -123,3 +123,13 @@ export const ExperiencesWrapper = styled.div`
     opacity: 0.4;
   }
 `;
+
+export const ProjectsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &:has(div:hover) div:not(:hover) > div {
+    opacity: 0.4;
+  }
+`;
