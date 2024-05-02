@@ -8,7 +8,7 @@ import getImage from "../../utils/functions/getImage";
 
 export default function Project({ project }) {
   return (
-    <S.ExperienceWrapper>
+    <S.ExperienceWrapper onClick={() => window.open(project.link, "_blank")}>
       <S.Image src={getImage(project.image)} className="project-image" alt="project-printscreen" />
       <S.RightContainer>
         <S.Title>

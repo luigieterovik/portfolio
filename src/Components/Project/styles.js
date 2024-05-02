@@ -23,9 +23,10 @@ export const ExperienceWrapper = styled.div`
     }
 
     .arrow {
+      transition: 100ms transform;
       filter: brightness(0) saturate(100%) invert(17%) sepia(93%)
         saturate(3430%) hue-rotate(279deg) brightness(108%) contrast(128%);
-      transform: translateX(-3px);
+      transform: translateX(-2px);
     }
   }
 `;

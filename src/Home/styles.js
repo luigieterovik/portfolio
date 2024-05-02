@@ -67,6 +67,7 @@ export const RightContainer = styled.div`
   margin-left: 100px;
   flex-direction: column;
   margin-left: auto;
+  padding-bottom: 80px;
   transform: translateY(10px);
 `;
 
