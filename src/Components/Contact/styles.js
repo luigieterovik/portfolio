@@ -11,17 +11,13 @@ export const ContactDiv = styled.div`
 
   &:hover {
     label {
-      transition: all 300ms;
+      transition: all 200ms;
       opacity: 1;
-
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
-        0 0 40px ${fontColor}, 0 0 70px ${fontColor}, 0 0 80px ${fontColor},
-        0 0 100px ${fontColor}, 0 0 150px ${fontColor};
     }
 
     img {
       opacity: 1;
-      transition: all 300ms;
+      transition: all 200ms;
     }
   }
 `;

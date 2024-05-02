@@ -107,7 +107,7 @@ export const Navbar = styled.nav`
 
 export const NavSection = styled.a`
   color: ${fontColor};
-  opacity: 0.6;
+  opacity: 0.4;
   font-size: 15px;
   font-weight: 400;
   text-decoration: none;
@@ -121,7 +121,6 @@ export const NavSection = styled.a`
     props.activeSection === props.title &&
     css`
       opacity: 1;
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
     `}
 `;
 
