@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import Background from "../assets/background.png";
 
@@ -61,7 +61,7 @@ export const ContactWrapper = styled.div`
 `;
 
 export const RightContainer = styled.div`
-  gap: 60px;
+  gap: 70px;
   width: 55%;
   display: flex;
   margin-left: 100px;
@@ -71,7 +71,10 @@ export const RightContainer = styled.div`
   transform: translateY(10px);
 `;
 
-export const Section = styled.section``;
+export const Section = styled.section`
+  scroll-margin-top: ${(props) =>
+    props.activeSection === "sobre" ? "110px" : "50px"};
+`;
 
 export const SectionTitle = styled.h3`
   color: ${fontColor};
@@ -94,7 +97,7 @@ export const Navbar = styled.nav`
   margin: 100px 0 0 70px;
   display: flex;
 
-  ul {
+  div {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -102,11 +105,24 @@ export const Navbar = styled.nav`
   }
 `;
 
-export const NavSection = styled.h4`
+export const NavSection = styled.a`
   color: ${fontColor};
   opacity: 0.6;
   font-size: 15px;
   font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  ${(props) =>
+    props.activeSection === props.title &&
+    css`
+      opacity: 1;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
+    `}
 `;
 
 export const SlideBar = styled.div`
