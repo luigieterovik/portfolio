@@ -13,7 +13,7 @@ const projects = [
     description:
       "Este projeto acadêmico é aplicação que permite a criação de usuários. Utilizando uma API, o front-end consome os dados, resultando na exibição dos usuários criados.",
     tags: ["JavaScript", "React", "Node.js", "API", "Axios"],
-    link: "https://create-users-pi.vercel.app/",
+    link: "https://create-users-bxuysshur-luigiolivi.vercel.app/",
   },
   {
     image: "calculadoraProject.png",
