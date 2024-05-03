@@ -134,6 +134,11 @@ export const SlideBar = styled.div`
   transition: all 200ms;
   left: 50px;
   top: calc(${(props) => props.top}px - 103px);
+  opacity: 0;
+
+  ${props => props.slideBarVisible && css`
+    opacity: 1;
+  `}
 `;
 
 export const ExperiencesWrapper = styled.div`

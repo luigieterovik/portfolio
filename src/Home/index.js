@@ -23,6 +23,14 @@ export default function Home() {
   const leftContainerRef = useRef(null);
   const backgroundWrapperRef = useRef(null);
 
+  const [slideBarVisible, setSlideBarVisible] = useState(false)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setSlideBarVisible(true)
+    }, 200);
+  }, [])
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -70,7 +78,7 @@ export default function Home() {
           </S.Description>
 
           <S.Navbar>
-            <S.SlideBar top={coordinates ? coordinates.top : 0} />
+            <S.SlideBar top={coordinates ? coordinates.top : 0} slideBarVisible={slideBarVisible}/>
 
             <div>
               {sections.map((section, index) => {
