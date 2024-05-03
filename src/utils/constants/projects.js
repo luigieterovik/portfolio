@@ -11,7 +11,7 @@ const projects = [
     image: "usersProject.png",
     title: "Create Users",
     description:
-      "Este projeto acadêmico é aplicação que permite a criação de usuários. Utilizando uma API, o front-end consome os dados, resultando na exibição dos usuários criados.",
+      "Este projeto acadêmico é uma aplicação que permite a criação de usuários. Utilizando uma API, o front-end consome os dados, resultando na exibição dos usuários criados.",
     tags: ["JavaScript", "React", "Node.js", "API", "Axios"],
     link: "https://create-users-bxuysshur-luigiolivi.vercel.app/",
   },
