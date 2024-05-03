@@ -4,80 +4,93 @@ import * as S from "./styles";
 
 import Contact from "../Components/Contact";
 import Experience from "../Components/Experience";
+import Project from "../Components/Project";
 
 import about from "../utils/constants/about";
 import contacts from "../utils/constants/contacts";
 import sections from "../utils/constants/sections";
 import experiences from "../utils/constants/experiences";
 import projects from "../utils/constants/projects";
-import Project from "../Components/Project";
+
+import scrollOnLeftContainer from "../utils/functions/scrollOnLeftContainer";
 import removeAccentuation from "../utils/functions/removeAccentuation";
+import getCoordinates from "../utils/functions/getCoordinates";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("sobre");
+
+  const navSectionRefs = useRef([]);
   const leftContainerRef = useRef(null);
   const backgroundWrapperRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll("section");
-      let currentSection = null;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5, rootMargin: "0px 0px -50% 0px" }
+    );
 
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
+    const sections = document.querySelectorAll("section");
+    sections.forEach((section) => observer.observe(section));
 
-        if (
-          rect.top >= 0 &&
-          rect.bottom <=
-            (window.innerHeight || document.documentElement.clientHeight)
-        ) {
-          currentSection = section.id;
-        }
-      });
-
-      setActiveSection(currentSection);
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollOnLeftContainer = (e) => {
-    const deltaY = e.deltaY;
-    if (backgroundWrapperRef.current) {
-      backgroundWrapperRef.current.scrollTo({
-        top: backgroundWrapperRef.current.scrollTop + deltaY,
-        behavior: "smooth",
-      });
-    }
-  };
+  const [coordinates, setCoordinates] = useState(null);
+
+  useEffect(() => {
+    navSectionRefs.current.forEach((ref) => {
+      if (removeAccentuation(ref.current.innerText) === activeSection) {
+        const newCoordinates = getCoordinates(ref);
+        if (newCoordinates.top !== coordinates?.top) {
+          setCoordinates(newCoordinates);
+        }
+      }
+    });
+  }, [activeSection, coordinates]);
 
   return (
     <S.BackgroundWrapper ref={backgroundWrapperRef}>
       <S.Wrapper>
-        <S.LeftContainer ref={leftContainerRef} onWheel={scrollOnLeftContainer}>
-          <S.Name>Luigi Eterovik</S.Name>
+        <S.LeftContainer
+          ref={leftContainerRef}
+          onWheel={(e) => scrollOnLeftContainer(e, backgroundWrapperRef)}
+        >
+          <S.Name href="/">Luigi Eterovik</S.Name>
           <S.Title>Desenvolvedor FullStack</S.Title>
           <S.Description>
             Construo aplicações web, ajudando empresas a venderem seus produtos.
           </S.Description>
 
           <S.Navbar>
-            <S.SlideBar />
+            <S.SlideBar top={coordinates ? coordinates.top : 0} />
+
             <div>
-              {sections.map((section, index) => (
-                <S.NavSection
-                  key={index}
-                  href={`#${removeAccentuation(sections[index])}`}
-                  activeSection={activeSection}
-                  title={removeAccentuation(sections[index])}
-                  onClick={() =>
-                    setActiveSection(removeAccentuation(sections[index]))
-                  }
-                >
-                  {section.toLocaleUpperCase()}
-                </S.NavSection>
-              ))}
+              {sections.map((section, index) => {
+                const ref = React.createRef();
+                navSectionRefs.current[index] = ref;
+                return (
+                  <S.NavSection
+                    key={index}
+                    ref={ref}
+                    href={`#${removeAccentuation(sections[index])}`}
+                    activeSection={activeSection}
+                    title={removeAccentuation(sections[index])}
+                    onClick={() =>
+                      setActiveSection(removeAccentuation(sections[index]))
+                    }
+                  >
+                    {section.toLocaleUpperCase()}
+                  </S.NavSection>
+                );
+              })}
             </div>
           </S.Navbar>
 

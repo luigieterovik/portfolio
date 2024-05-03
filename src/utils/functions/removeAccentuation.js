@@ -8,4 +8,4 @@ function removeAccentuation(string) {
   return spaceToHyphen;
 }
 
-export default removeAccentuation
+export default removeAccentuation;

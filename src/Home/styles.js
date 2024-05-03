@@ -30,9 +30,10 @@ export const LeftContainer = styled.div`
   position: fixed;
 `;
 
-export const Name = styled.h1`
+export const Name = styled.a`
   color: ${fontColor};
   font-weight: 700;
+  text-decoration: none;
   font-size: 50px;
   width: fit-content;
   white-space: nowrap;
@@ -125,9 +126,14 @@ export const NavSection = styled.a`
 `;
 
 export const SlideBar = styled.div`
-  height: 25%;
+  height: 25px;
   width: 3px;
   background: ${fontColor};
+  border-radius: 30px;
+  position: absolute;
+  transition: all 200ms;
+  left: 50px;
+  top: calc(${(props) => props.top}px - 103px);
 `;
 
 export const ExperiencesWrapper = styled.div`
