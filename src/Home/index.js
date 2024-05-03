@@ -112,7 +112,14 @@ export default function Home() {
             activeSection={activeSection}
           >
             <S.SectionTitle>{sections[0].toLocaleUpperCase()}</S.SectionTitle>
-            <S.AboutText>{about}</S.AboutText>
+            <S.AboutText>
+              {about.split("\n").map((paragraph, index) => (
+                <React.Fragment key={index}>
+                  {paragraph}
+                  <br />
+                </React.Fragment>
+              ))}
+            </S.AboutText>
           </S.Section>
 
           <S.Section id={removeAccentuation(sections[1])}>
