@@ -2,9 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 
 import * as S from "./styles";
 
+import { size } from "../styles/breakpoints";
+
 import Contact from "../Components/Contact";
 import Experience from "../Components/Experience";
 import Project from "../Components/Project";
+import Navbar from "../Components/Navbar";
 
 import about from "../utils/constants/about";
 import contacts from "../utils/constants/contacts";
@@ -23,13 +26,19 @@ export default function Home() {
   const leftContainerRef = useRef(null);
   const backgroundWrapperRef = useRef(null);
 
-  const [slideBarVisible, setSlideBarVisible] = useState(false)
+  const [slideBarVisible, setSlideBarVisible] = useState(false);
+
+  let windowWidth = window.innerWidth;
+
+  window.addEventListener("resize", () => {
+    windowWidth = window.innerWidth;
+  });
 
   useEffect(() => {
-    setTimeout(() => {
-      setSlideBarVisible(true)
-    }, 200);
-  }, [])
+    if (windowWidth > size.md) {
+      setSlideBarVisible(true);
+    }
+  }, [windowWidth]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -77,30 +86,14 @@ export default function Home() {
             Construo aplicações web, ajudando empresas a venderem seus produtos.
           </S.Description>
 
-          <S.Navbar>
-            <S.SlideBar top={coordinates ? coordinates.top : 0} slideBarVisible={slideBarVisible}/>
-
-            <div>
-              {sections.map((section, index) => {
-                const ref = React.createRef();
-                navSectionRefs.current[index] = ref;
-                return (
-                  <S.NavSection
-                    key={index}
-                    ref={ref}
-                    href={`#${removeAccentuation(sections[index])}`}
-                    activeSection={activeSection}
-                    title={removeAccentuation(sections[index])}
-                    onClick={() =>
-                      setActiveSection(removeAccentuation(sections[index]))
-                    }
-                  >
-                    {section.toLocaleUpperCase()}
-                  </S.NavSection>
-                );
-              })}
-            </div>
-          </S.Navbar>
+          <Navbar
+            coordinates={coordinates}
+            slideBarVisible={slideBarVisible}
+            sections={sections}
+            navSectionRefs={navSectionRefs}
+            activeSection={activeSection}
+            setActiveSection={setActiveSection}
+          />
 
           <S.ContactWrapper>
             {contacts.map((contact, index) => (

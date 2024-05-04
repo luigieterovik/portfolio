@@ -4,6 +4,8 @@ import Background from "../assets/background.png";
 
 import fontColor from "../utils/constants/fontColor";
 
+import { breakpoints } from "../styles/breakpoints";
+
 export const BackgroundWrapper = styled.div`
   width: 100vw;
   height: 100vh;
@@ -15,6 +17,10 @@ export const BackgroundWrapper = styled.div`
   display: flex;
   justify-content: center;
   overflow-y: auto;
+
+  @media ${breakpoints.bg} {
+    padding: 100px;
+  }
 `;
 
 export const Wrapper = styled.main`
@@ -59,6 +65,10 @@ export const ContactWrapper = styled.div`
   gap: 30px;
   display: flex;
   margin-top: auto;
+
+  @media ${breakpoints.md} {
+    margin-top: 0;
+  }
 `;
 
 export const RightContainer = styled.div`
@@ -90,55 +100,6 @@ export const AboutText = styled.p`
   font-size: 16px;
   opacity: 0.6;
   text-wrap: balance;
-`;
-
-// Navbar
-
-export const Navbar = styled.nav`
-  margin: 100px 0 0 70px;
-  display: flex;
-
-  div {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-left: 15px;
-  }
-`;
-
-export const NavSection = styled.a`
-  color: ${fontColor};
-  opacity: 0.4;
-  font-size: 15px;
-  font-weight: 400;
-  text-decoration: none;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.8;
-  }
-
-  ${(props) =>
-    props.activeSection === props.title &&
-    css`
-      opacity: 1;
-    `}
-`;
-
-export const SlideBar = styled.div`
-  height: 25px;
-  width: 3px;
-  background: ${fontColor};
-  border-radius: 30px;
-  position: absolute;
-  transition: all 200ms;
-  left: 50px;
-  top: calc(${(props) => props.top}px - 103px);
-  opacity: 0;
-
-  ${props => props.slideBarVisible && css`
-    opacity: 1;
-  `}
 `;
 
 export const ExperiencesWrapper = styled.div`
