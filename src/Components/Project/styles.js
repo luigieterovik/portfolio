@@ -31,6 +31,16 @@ export const ExperienceWrapper = styled.div`
       transform: translateX(-2px);
     }
   }
+
+  @media ${breakpoints.md} {
+    &:hover {
+      background-color: initial;
+    }
+  }
+
+  @media ${breakpoints.sm} {
+    flex-direction: column;
+  }
 `;
 
 export const Image = styled.img`
@@ -45,11 +55,21 @@ export const Image = styled.img`
     height: 50%;
     width: 30%;
   }
+
+  @media ${breakpoints.sm} {
+    height: 80%;
+    width: 60%;
+  }
 `;
 
 export const RightContainer = styled.div`
   width: 73%;
   margin-left: auto;
+
+  @media ${breakpoints.sm} {
+    margin: 15px 0 0 0;
+    width: 100%;
+  }
 `;
 
 export const Title = styled.h5`

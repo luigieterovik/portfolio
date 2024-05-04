@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 import fontColor from "../../utils/constants/fontColor";
 
+import { breakpoints } from "../../styles/breakpoints";
+
 export const ExperienceWrapper = styled.div`
   width: 100%;
   border-radius: 10px;
@@ -17,6 +19,16 @@ export const ExperienceWrapper = styled.div`
       color: #db00ff;
     }
   }
+
+  @media ${breakpoints.md} {
+    &:hover {
+      background-color: initial;
+    }
+  }
+
+  @media ${breakpoints.sm} {
+    flex-direction: column;
+  }
 `;
 
 export const ExperienceDate = styled.label`
@@ -31,6 +43,11 @@ export const ExperienceDate = styled.label`
 export const ExperienceRightContainer = styled.div`
   width: 73%;
   margin-left: auto;
+
+  @media ${breakpoints.sm} {
+    margin: 15px 0 0 0;
+    width: 100%;
+  }
 `;
 
 export const ExperienceTitle = styled.h5`

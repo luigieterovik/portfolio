@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import Background from "../assets/background.png";
 
@@ -135,6 +135,12 @@ export const ExperiencesWrapper = styled.div`
   &:has(div:hover) div:not(:hover) > div {
     opacity: 0.4;
   }
+
+  @media ${breakpoints.md} {
+    &:has(div:hover) div:not(:hover) > div {
+      opacity: 1;
+    }
+  }
 `;
 
 export const ProjectsWrapper = styled.div`
@@ -144,5 +150,11 @@ export const ProjectsWrapper = styled.div`
 
   &:has(div:hover) div:not(:hover) > div {
     opacity: 0.4;
+  }
+
+  @media ${breakpoints.md} {
+    &:has(div:hover) div:not(:hover) > div {
+      opacity: 1;
+    }
   }
 `;

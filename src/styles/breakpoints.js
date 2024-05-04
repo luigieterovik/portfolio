@@ -1,5 +1,5 @@
 export const size = {
-  sm: "300",
+  sm: "600",
   sm2: "700",
   md: "1100",
   bg: "1300",
