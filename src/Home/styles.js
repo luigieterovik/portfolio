@@ -21,10 +21,23 @@ export const BackgroundWrapper = styled.div`
   @media ${breakpoints.bg} {
     padding: 100px;
   }
+
+  @media ${breakpoints.md} {
+    padding: 50px;
+  }
+
+  @media ${breakpoints.sm2} {
+    padding: 30px;
+  }
 `;
 
 export const Wrapper = styled.main`
   width: 1100px;
+  display: flex;
+
+  @media ${breakpoints.md} {
+    flex-direction: column;
+  }
 `;
 
 export const LeftContainer = styled.div`
@@ -34,6 +47,10 @@ export const LeftContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: fixed;
+
+  @media ${breakpoints.md} {
+    position: initial;
+  }
 `;
 
 export const Name = styled.a`
@@ -80,6 +97,11 @@ export const RightContainer = styled.div`
   margin-left: auto;
   padding-bottom: 80px;
   transform: translateY(10px);
+
+  @media ${breakpoints.md} {
+    margin: 60px 0 0;
+    width: 100%;
+  }
 `;
 
 export const Section = styled.section`
@@ -95,11 +117,14 @@ export const SectionTitle = styled.h3`
   opacity: 0.9;
 `;
 
-export const AboutText = styled.p`
+export const AboutText = styled.div`
   color: ${fontColor};
   font-size: 16px;
   opacity: 0.6;
-  text-wrap: balance;
+
+  p {
+    text-wrap: balance;
+  }
 `;
 
 export const ExperiencesWrapper = styled.div`

@@ -114,12 +114,18 @@ export default function Home() {
           >
             <S.SectionTitle>{sections[0].toLocaleUpperCase()}</S.SectionTitle>
             <S.AboutText>
-              {about.split("\n").map((paragraph, index) => (
-                <React.Fragment key={index}>
-                  {paragraph}
-                  <br />
-                </React.Fragment>
-              ))}
+              <p>
+                {about.split("\n").map((paragraph, index) => (
+                  <React.Fragment key={index}>
+                    {paragraph.split(" ").map((word, index) => (
+                      <React.Fragment key={index}>
+                        <span>{word} </span>
+                      </React.Fragment>
+                    ))}
+                    <br />
+                  </React.Fragment>
+                ))}
+              </p>
             </S.AboutText>
           </S.Section>
 

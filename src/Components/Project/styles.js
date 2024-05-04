@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 import fontColor from "../../utils/constants/fontColor";
 
+import { breakpoints } from "../../styles/breakpoints";
+
 export const ExperienceWrapper = styled.div`
   width: 100%;
   border-radius: 10px;
@@ -38,6 +40,11 @@ export const Image = styled.img`
   height: 70px;
   width: 120px;
   border: 2px solid rgba(128, 128, 128, 0.5);
+
+  @media ${breakpoints.md} {
+    height: 50%;
+    width: 30%;
+  }
 `;
 
 export const RightContainer = styled.div`
