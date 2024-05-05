@@ -22,6 +22,8 @@ import getCoordinates from "../utils/functions/getCoordinates";
 export default function Home() {
   const [activeSection, setActiveSection] = useState("sobre");
 
+  console.log(activeSection)
+
   const navSectionRefs = useRef([]);
   const leftContainerRef = useRef(null);
   const backgroundWrapperRef = useRef(null);
@@ -49,7 +51,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.5, rootMargin: "0px 0px -50% 0px" }
+      { threshold: 0.5, rootMargin: "0px 0px -20% 0px" }
     );
 
     const sections = document.querySelectorAll("section");

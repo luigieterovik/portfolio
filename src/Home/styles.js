@@ -92,10 +92,8 @@ export const RightContainer = styled.div`
   gap: 70px;
   width: 55%;
   display: flex;
-  margin-left: 100px;
   flex-direction: column;
   margin-left: auto;
-  padding-bottom: 80px;
   transform: translateY(10px);
 
   @media ${breakpoints.md} {
@@ -146,6 +144,7 @@ export const ExperiencesWrapper = styled.div`
 export const ProjectsWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 70px;
   gap: 10px;
 
   &:has(div:hover) div:not(:hover) > div {
