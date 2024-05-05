@@ -22,8 +22,6 @@ import getCoordinates from "../utils/functions/getCoordinates";
 export default function Home() {
   const [activeSection, setActiveSection] = useState("sobre");
 
-  console.log(activeSection)
-
   const navSectionRefs = useRef([]);
   const leftContainerRef = useRef(null);
   const backgroundWrapperRef = useRef(null);
