@@ -22,6 +22,13 @@ const projects = [
       "Este projeto acadêmico é uma aplicação que permite a criação de usuários. Utilizando uma API, o front-end consome os dados, resultando na exibição dos usuários criados.",
     tags: ["JavaScript", "React", "Node.js", "API", "Axios"],
     link: "https://create-users-pi.vercel.app/",
+  },  {
+    image: "converterProject.png",
+    title: "Money Converter",
+    description:
+      "Uma página que permite converter Real em outras moedas, que incluem o Dólar, Euro e Bitcoin. Além disso, consome uma API com os valores em tempo real de cada uma das moedas, fazendo com que a conversão seja precisa.",
+    tags: ["JavaScript", "HTML", "CSS", "API"],
+    link: "https://luigieterovik.github.io/money-converter/",
   },
 ];
 
