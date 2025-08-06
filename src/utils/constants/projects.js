@@ -11,7 +11,7 @@ const projects = [
     image: "marisProject.png",
     title: "Mari's Boutik's",
     description:
-      "E-Commerce Mari's Boutik's, voltado para venda de produtos cosméticos.",
+      "E-Commerce Mari's Boutik's, voltado para venda de produtos cosméticos. (Em desenvolvimento)",
     tags: ["JavaScript", "React", "Node.js", "API", "Docker", "PostgreSQL", "Banco de Dados", "AWS", "Payment Gateway"],
     link: "https://maris-frontend.vercel.app/",
   },
