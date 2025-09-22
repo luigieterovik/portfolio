@@ -14,7 +14,7 @@ const contacts = [
   {
     image: "resumeIcon.png",
     name: "Currículo",
-    link: "https://drive.google.com/file/d/1ribHaxVoVGWgKjKZKJNQDw1vPJe5j7bW/view?usp=sharing",
+    link: "https://drive.google.com/file/d/1nG7k55tPx0qg52Y3ksxl4AJGpQs3twKQ/view",
   },
 ];
 
